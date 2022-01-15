@@ -1,0 +1,436 @@
+@font-face {
+    font-family: 'Poppins-Bold';
+    src: url(../Fonts/Poppins-Bold.ttf);
+}
+
+@font-face {
+    font-family: 'Poppins-Medium';
+    src: url(../Fonts/Poppins-Medium.ttf);
+}
+
+@font-face {
+    font-family: 'Poppins-Thin';
+    src: url(../Fonts/Poppins-Regular.ttf);
+}
+
+:root{
+    --main-text-bold: 'Poppins-Bold';
+    --main-text-medium: 'Poppins-Medium';
+    --main-text-thin: 'Poppins-Thin';
+}
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins-Thin';
+}
+
+*::selection
+{
+    color: crimson;
+}
+
+body
+{
+    height: 100vh;
+    width: 100%;
+    background-color: #111;
+}
+
+section
+{
+    height: 100vh;
+    width: 100%;
+    background-color: #111;
+}
+
+nav
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: .5rem;
+    border-left: .5rem solid crimson;
+    margin-top: 10px;
+}
+
+nav a
+{
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+.logo
+{
+    color: yellow;
+    line-height: 16px;
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+    transform: rotate(-10deg);
+    transition: .5s cubic-bezier(1, -0.16, 0.07, 1.52);
+}
+.logo:hover
+{
+    transform: rotate(80deg);
+}
+
+ul
+{
+    display: flex;
+    margin-right: 20%;
+}
+ul li
+{
+    list-style: none;
+    margin-left: 2rem;
+    font-size: .8rem;
+    font-weight: 200;
+    letter-spacing: 2px;
+    transition: all .3s ease;
+}
+
+ul li:hover
+{
+    transform: scale(.8);
+}
+
+ul li:hover a
+{
+    color: deepskyblue;
+}
+
+.home
+{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* display: none; */
+    border-bottom: 1px solid #222;
+}
+
+.main_content
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+.main_text
+{
+    margin-right: 4rem;
+    margin-top: 10%;
+}
+
+.image
+{
+    /* margin-top: 5%; */
+    height: 400px;
+    width: 280px;
+    background-image: url(../Images/me.jpg);
+    background-position: center;
+    background-size: cover;
+    opacity: .7;
+    transform: rotate(-5deg);
+    position: relative;
+    cursor: pointer;
+    transition: .4s cubic-bezier(1, -0.16, 0.07, 1.52);
+}
+.image::after
+{
+    position: absolute;
+    content: '';
+    background-color: crimson;
+    height: 400px;
+    width: 280px;
+    opacity: .2;
+    z-index: -3;
+    transform: rotate(15deg);
+    transition: .5s cubic-bezier(1, -0.16, 0.07, 1.52);
+}
+
+.image:hover
+{
+    transform: rotate(15deg);
+}
+.image:hover:after
+{
+    transform: rotate(-10deg);
+    opacity: .3;
+}
+
+.footer_home
+{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: .5rem;
+    font-weight: lighter;
+    color: #444;
+}
+.footer_home span
+{
+    color: crimson;
+}
+
+.main_text h1
+{
+    font-size: 5rem;
+    line-height: 5rem;
+    font-family: var(--main-text-bold);
+}
+
+.values
+{
+    color: crimson;
+    line-height: 8rem;
+    transform: rotate(-2deg);
+}
+
+.values span
+{
+    margin: 0 15px;
+    cursor: pointer;
+    transition: 1s ease;
+}
+.values span:hover
+{
+    border-bottom: 1px solid crimson;
+}
+
+.main_text h1 span:first-child
+{
+    color: crimson;
+}
+.main_text h1 span:nth-child(3)
+{
+    color: yellow;
+}
+
+.main_text h1 span:nth-child(5)
+{
+    color: #fff;
+    font-size: 6rem;
+}
+
+.vertical_text
+{
+    color: deepskyblue;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    padding: .3rem 0;
+    transform: translateY(-50%);
+    writing-mode:vertical-rl;
+    transform: rotate(180deg);
+    font-family: var(--main-text-bold);
+    line-height: 1.5rem;
+    letter-spacing: -1px;
+    cursor: pointer;
+}
+
+.about 
+{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    height: 110vh;
+    padding: 1rem;
+}
+
+.quote
+{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border-left: .5rem solid yellow;
+    margin: .5rem 0;
+    padding: 1rem;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.quote .quotation_mark
+{
+    color: crimson;
+    font-size: 3rem;
+}
+
+.quote p
+{
+    font-size: 1.3rem;
+    color: #fff;
+    font-family: var(--main-text-thin);
+}
+.quote p span
+{
+    color: yellow;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.quote > h4
+{
+    color: #333;
+    text-align: right;
+    margin-top: 1rem;
+    margin-right: 10rem;
+    line-height: 2rem;
+}
+
+.user
+{
+    margin: 5px;
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.user .company
+{
+    font-weight: bold;
+    color: deepskyblue;
+    font-size: 14px;
+}
+.user p
+{
+    line-height: 1.6rem;
+    max-width: 70%;
+}
+
+.user .rank
+{
+    color: deepskyblue;
+    font-weight: bold;
+}
+
+.user img
+{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 2px solid rgb(38, 224, 38);
+}
+
+.user .company,
+.user .rank,
+.user p
+{
+    margin-bottom: 1rem;
+}
+.user::after
+{
+    position: absolute;
+    content: '';
+    background-color: crimson;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.user-1::after
+{
+    height: 80px;
+    width: 80px;
+    top: 10%;
+    left: 0;
+    transition: all .9s cubic-bezier(1, -0.21, 0, 1.1) ;
+}
+
+/* USER 1 Animation */
+.user-1:hover:after
+{
+    background-color: yellow;
+    border-radius: 0;
+    height: 3px;
+    width: 5px;
+    top: 80%;
+    width: 100%;
+}
+
+/* USER 2 Animation */
+.user-2::after{
+    height: 100px ;
+    width: 100px;
+    top: 0;
+    right: 0;
+    transition: 1s cubic-bezier(1,-0.18, 0, 1.51), border 1.2s ease;
+}
+.user-2:hover:after
+{
+    background-color: yellow;
+    top: 50%;
+    right: 50%;
+    transform: translate(-50%, -50%);
+    background-color: transparent;
+    border: 2px solid yellow;
+}
+
+
+/* USER 3 Animation */
+.user-3::after
+{
+    transition: all .7s cubic-bezier(1,-0.35, 0.24, 1.3);
+}
+.user-3:hover:after
+{
+    background-color: yellow;
+    transform: scale(0.5);
+    right:0;
+    border-radius: 0;
+    width: .5rem;
+    height: 100%;
+}
+
+
+/* USER 4 Animation */
+.user-4::after{
+    transition: all .8s cubic-bezier(1,-0.36, 0, 1.63);
+}
+.user-4:hover:after
+{
+    background-color: yellow;
+    border-radius: 0;
+    height: 100%;
+    width: 100%;
+}
+.user-4:hover:after  .user
+{
+    color: black;
+}
+
+.user-1 img
+{
+    top: 20%;
+    right: 10%;
+}
+
+.user-2 img
+{
+    top: 10%;
+    left: 10%;
+}
+
+.user-3 img
+{
+    top: -5%;
+    right: 5%;
+}
+
+.user-4 img
+{
+    height: 70px;
+    width: 70px;
+    top: 5%;
+    right: 5%;
+}
