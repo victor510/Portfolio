@@ -130,26 +130,82 @@ ul li:hover a
 
 .image
 {
-    height: 380px;
-    background-color: yellow;
-    transform: rotate(5deg);
+    width: 280px;
+    height: 400px;
     position: relative;
     cursor: pointer;
-    transition: .4s cubic-bezier(1, -0.16, 0.07, 1.52);
+    border-radius: .3rem;
+}
+.image img
+{
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    opacity: .8;
+    z-index: 0;
+}
+.image .overlay
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    background-color: rgba(0,0,0, .4);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    padding: 1rem;
+    height: 100%;
+    border-radius: .3rem;
+    margin-top: 70%;
+    opacity: 0;
+    backdrop-filter: blur(3px);
+    transition: all .2s linear; 
 }
 
+.overlay .image__title
+{
+    font-weight: bold;
+    font-size: max(2rem);
+    margin-bottom: .5rem;
+    opacity: 0;
+    transition: .5s ease linear;
+    transition-delay: 1.5s;
+
+}
+.overlay .image__description
+{
+    line-height: 2rem;
+    opacity: 0;
+    transition: .5s ease linear;
+    transition-delay: 2s;
+}
+
+.image:hover .overlay
+{
+    opacity: 1;
+    height: 100%;
+    margin-top: 0;
+}
+.image:hover .image__title,
+.image:hover .image__description
+{
+    opacity: 1;
+}
 .image span
 {
     position: absolute;
-    height: 0px;
-    width: calc(100% / 3);
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
     background-color: #111;
-}
-.image span:first-child{
-    margin-left: calc(100% / 3);
-}
-.image span:nth-child(2){
-    margin-left: calc( calc(100% / 3) + calc(100% / 3) );
+    /* z-index: 3; */
 }
 
 .image::before
@@ -170,7 +226,7 @@ ul li:hover a
 .footer_home
 {
     position: absolute;
-    bottom: 0;
+    bottom: -10%;
     right: 0;
     padding: .5rem;
     font-weight: lighter;
@@ -189,12 +245,13 @@ ul li:hover a
 }
 .bi
 {
-    color: crimson;
+    color: #333;
     position: absolute;
-    left: 40%;
-    height: 5rem;
-    width: 5rem;
-    /* transform: rotate(-25deg); */
+    top: 12%;
+    left: 55%;
+    height: 3rem;
+    width: 3rem;
+    transform: rotate(45deg);
     cursor: pointer;
 }
 .values
@@ -251,6 +308,7 @@ ul li:hover a
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
+    grid-gap: 10px;
     height: 110vh;
     padding: 1rem;
 }
@@ -260,33 +318,14 @@ ul li:hover a
     display: flex;
     flex-direction: column;
     text-align: center;
-    border-left: .5rem solid yellow;
     margin: .5rem 0;
     padding: 1rem;
     position: relative;
     grid-column-start: 1;
     grid-column-end: 3;
-}
-.quote::before,
-.quote::after
-{
-    content: '';
-    position: absolute;
-    background-color: #333;
-}
-.quote::before
-{
-    top: 0;
-    right: 20%;
-    height: 3px;
-    width: 10%;
-}
-.quote::after
-{
-    top: 0;
-    right: 20%;
-    width: 3px;
-    height: 20%;
+    border: 1px solid yellow;
+    border-radius: .3rem;
+    padding: 2rem 3rem;
 }
 .quote svg
 {
@@ -296,15 +335,15 @@ ul li:hover a
 .quote svg:first-child
 {
     position: absolute;
-    top: 0;
-    left: 20%;
+    top: 10%;
+    left: 30%;
 }
 
 .quote svg:last-child
 {
     position: absolute;
-    bottom: 25%;
-    right: 20%;
+    bottom: 40%;
+    right: 25%;
 }
 
 
@@ -341,6 +380,7 @@ ul li:hover a
     align-items: center;
     cursor: pointer;
     border: 1px solid #333;
+    border-radius: .3rem;
 }
 .user .company
 {
@@ -362,14 +402,13 @@ ul li:hover a
 
 .user img
 {
-    height: 50px;
-    width: 50px;
+    height: 70px;
+    width: 70px;
     border-radius: 50%;
     object-fit: cover;
     position: absolute;
-    top: 0;
-    right: 0;
-    border: 2px solid rgb(38, 224, 38);
+    top: 5%;
+    left: 5%;
 }
 
 .user .company,
@@ -377,33 +416,4 @@ ul li:hover a
 .user p
 {
     margin-bottom: 1rem;
-}
-
-
-
-
-.user-1 img
-{
-    top: 20%;
-    right: 10%;
-}
-
-.user-2 img
-{
-    top: 10%;
-    left: 10%;
-}
-
-.user-3 img
-{
-    top: -5%;
-    right: 5%;
-}
-
-.user-4 img
-{
-    height: 70px;
-    width: 70px;
-    top: 5%;
-    right: 5%;
 }

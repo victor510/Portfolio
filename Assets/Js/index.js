@@ -12,27 +12,38 @@ gsap.from('ul li', {
     stagger: .4
 })
 
-gsap.from('.image span', {
+gsap.to('.image span', {
+    delay: 1.5,
     duration: 1,
-    height: '400px',
-    stagger: .3
+    width: '150px',
+    left: '40%'
 })
 gsap.to('.image span', {
     duration: 1,
-    height: '0px',
-    stagger: .3
+    delay: 2,
+    left: '100%'
+})
+
+gsap.from('.image img', {
+    duration: 4,
+    delay: 1.5,
+    opacity: 0
 })
 
 gsap.from('h1 span', {
-    duration: 1.3,
+    duration: .5,
     opacity: 0,
-    stagger: .6
+    stagger: .4
 })
 
 gsap.to('.bi', {
     delay: 1.5,
     duration: 2,
-    transform: 'rotate(335deg)',
-    color: 'yellow',
+    transform: 'rotate(-5deg)',
     ease: 'elastic'
+})
+
+gsap.from('.vertical_text', {
+    duration: 1,
+    left: '-3rem'
 })
